@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  header {
+    grid-area: header;
+    background-color: rgba(31, 40, 51);
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgba(197, 198, 199);
+  }
+  #map-container {
+    display: flex;
+    justify-content: flex-end; /* Align the map to the right */
+    height: 80%; /* Adjust the height as per your needs */
+  }
+  
+  #map {
+    width: 100%; /* The width of the map, adjust as needed */
+    height: 100%; /* Full height of the parent container */
+    border: 1px solid #ccc; /* Optional border for clarity */
+  }
+  
+  #floating-panel {
+    width: 30%;
+    height: 100vh;
+    float: left;
+    background-color: rgba(31, 40, 51);
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+  }
+  
+  #floating-panel b {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgba(197, 198, 199);
+  }
+  #floating-panel #dptime{
+    color: rgba(197, 198, 199);
+  }
+  
+  #floating-panel select,
+  #floating-panel input {
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 14px;
+    color: #000000;
+    background-color:rgba(102, 252, 241) ;
+    border: 1px solid rgba(102, 252, 241);
+    border-radius: 4px;
+  }
+  
+  #floating-panel label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  #floating-panel input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  #floating-panel #get-route-btn {
+    width: calc(100% - 20px);
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  #floating-panel #get-route-btn:hover {
+    background-color: #0056b3;
+  }
+  #info-container {
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Optional background color */
+    border-top: 1px solid #ccc; /* Optional border for clarity */
+  }
+  
+  #results {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  #results p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  #total {
+    font-size: 16px;
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+  }
+  

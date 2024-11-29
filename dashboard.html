@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com https://fonts.googleapis.com;
+  connect-src 'self' http://localhost:3000 https://maps.googleapis.com https://securetoken.googleapis.com https://fleet-management-system-7708f.firebaseio.com https://identitytoolkit.googleapis.com;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com https://streetviewpixels-pa.googleapis.com https://lh3.ggpht.com http://localhost:3000;
+  font-src 'self' https://fonts.gstatic.com;
+  media-src 'self' data:;
+">
+
+  <title>Dashboard</title>
+  <style>
+   /* CSS Code */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#dashboard {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "form map"
+    "form route";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#form-container {
+  grid-area: form;
+  background-color: #fafafa;
+  padding: 15px;
+  border-right: 1px solid #ddd;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+#map {
+  grid-area: map;
+  border: 1px solid #ddd;
+}
+
+#route-details {
+  grid-area: route;
+  background-color: #fafafa;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  font-size: 1em;
+}
+  </style>
+</head>
+<body>
+    <div id="dashboard">
+      <header>MY DASHBOARD</header>
+      
+      <div id="form-container">
+        <form id="routeForm">
+          <label for="originLat">Origin Latitude:</label>
+          <input type="text" id="originLat" required>
+          <label for="originLng">Origin Longitude:</label>
+          <input type="text" id="originLng" required>
+          <label for="destinationLat">Destination Latitude:</label>
+          <input type="text" id="destinationLat" required>
+          <label for="destinationLng">Destination Longitude:</label>
+          <input type="text" id="destinationLng" required>
+          <label for="travelMode">Travel Mode:</label>
+          <select id="travelMode">
+            <option value="driving">Driving</option>
+            <option value="walking">Walking</option>
+            <option value="bicycling">Bicycling</option>
+            <option value="transit">Transit</option>
+          </select>
+          <label>
+            <input type="checkbox" id="avoidTolls"> Avoid Tolls
+          </label>
+          <label>
+            <input type="checkbox" id="avoidHighways"> Avoid Highways
+          </label>
+          <label>
+            <input type="checkbox" id="trafficAware"> Traffic-Aware
+          </label>
+          <button type="submit">Get Route</button>
+        </form>
+      </div>  
+ 
+    
+  
+  Your map script
+
+  <div id="map" style="height: 500px;"> </div>
+   <form id="routeForm">
+    <label for="start">Start Location:</label>
+    <input type="text" id="start" name="start">
+    
+    <label for="end">End Location:</label>
+    <input type="text" id="end" name="end">
+    
+    <label for="avoidTolls">Avoid Tolls:</label>
+    <input type="checkbox" id="avoidTolls" name="avoidTolls">
+    
+    <label for="avoidHighways">Avoid Highways:</label>
+    <input type="checkbox" id="avoidHighways" name="avoidHighways">
+    
+    <button type="submit">Get Route</button>
+</form> -->
+  
+  <!-- <script>
+    // Initialize the map
+    function initMap() {
+      const mapOptions = {
+        center: { lat: -1.286389, lng: 36.817223 }, // Default center (Nairobi)
+        zoom: 8,
+      };
+      const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }
+  </script>
+  <script src="map.js"></script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVQ11b4em7asW3XQIxPjOr0yZk3qZT7hg&callback=initMap&libraries=geometry"></script>
+
+ <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiqCsieaASM0RjgTQqi900MXZaq-AZrZw&callback=initMap&v=weekly&solution_channel=GMP_CCS_distancematrix_v2"
+    async
+    defer>
+</script> -->
+
+<!-- </body>  -->
+<html>
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com https://fonts.googleapis.com;
+  connect-src 'self' http://localhost:3000 https://maps.googleapis.com https://securetoken.googleapis.com https://fleet-management-system-7708f.firebaseio.com https://identitytoolkit.googleapis.com;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com https://streetviewpixels-pa.googleapis.com https://lh3.ggpht.com http://localhost:3000;
+  font-src 'self' https://fonts.gstatic.com;
+  media-src 'self' data:;
+">
+    <title>Directions Service</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="module" src="index.js"></script>
+    
+  </head>
+  <body>
+    <header>MY DASHBOARD</header>
+    <div id="floating-panel">
+      <b>Start: </b>
+      <select id="start">
+        <option value="Mombasa">Mombasa</option>
+        <option value="Kwale">Kwale</option>
+        <option value="Kilifi">Kilifi</option>
+        <option value="Tana River">Tana River</option>
+        <option value="Lamu">Lamu</option>
+        <option value="Taita Taveta">Taita Taveta</option>
+        <option value="Garissa">Garissa</option>
+        <option value="Wajir">Wajir</option>
+        <option value="Mandera">Mandera</option>
+        <option value="Marsabit">Marsabit</option>
+        <option value="Isiolo">Isiolo</option>
+        <option value="Meru">Meru</option>
+        <option value="Tharaka Nithi">Tharaka Nithi</option>
+        <option value="Embu">Embu</option>
+        <option value="Kitui">Kitui</option>
+        <option value="Machakos">Machakos</option>
+        <option value="Makueni">Makueni</option>
+        <option value="Nyandarua">Nyandarua</option>
+        <option value="Nyeri">Nyeri</option>
+        <option value="Kirinyaga">Kirinyaga</option>
+        <option value="Murang'a">Murang'a</option>
+        <option value="Kiambu">Kiambu</option>
+        <option value="Turkana">Turkana</option>
+        <option value="West Pokot">West Pokot</option>
+        <option value="Samburu">Samburu</option>
+        <option value="Trans Nzoia">Trans Nzoia</option>
+        <option value="Uasin Gishu">Uasin Gishu</option>
+        <option value="Elgeyo Marakwet">Elgeyo Marakwet</option>
+        <option value="Nandi">Nandi</option>
+        <option value="Baringo">Baringo</option>
+        <option value="Laikipia">Laikipia</option>
+        <option value="Nakuru">Nakuru</option>
+        <option value="Narok">Narok</option>
+        <option value="Kajiado">Kajiado</option>
+        <option value="Kericho">Kericho</option>
+        <option value="Bomet">Bomet</option>
+        <option value="Kakamega">Kakamega</option>
+        <option value="Vihiga">Vihiga</option>
+        <option value="Bungoma">Bungoma</option>
+        <option value="Busia">Busia</option>
+        <option value="Siaya">Siaya</option>
+        <option value="Kisumu">Kisumu</option>
+        <option value="Homa Bay">Homa Bay</option>
+        <option value="Migori">Migori</option>
+        <option value="Kisii">Kisii</option>
+        <option value="Nyamira">Nyamira</option>
+        <option value="Nairobi">Nairobi</option>
+      </select>
+      <b>End: </b>
+      <select id="end">
+          <option value="Mombasa">Mombasa</option>
+  <option value="Kwale">Kwale</option>
+  <option value="Kilifi">Kilifi</option>
+  <option value="Tana River">Tana River</option>
+  <option value="Lamu">Lamu</option>
+  <option value="Taita Taveta">Taita Taveta</option>
+  <option value="Garissa">Garissa</option>
+  <option value="Wajir">Wajir</option>
+  <option value="Mandera">Mandera</option>
+  <option value="Marsabit">Marsabit</option>
+  <option value="Isiolo">Isiolo</option>
+  <option value="Meru">Meru</option>
+  <option value="Tharaka Nithi">Tharaka Nithi</option>
+  <option value="Embu">Embu</option>
+  <option value="Kitui">Kitui</option>
+  <option value="Machakos">Machakos</option>
+  <option value="Makueni">Makueni</option>
+  <option value="Nyandarua">Nyandarua</option>
+  <option value="Nyeri">Nyeri</option>
+  <option value="Kirinyaga">Kirinyaga</option>
+  <option value="Murang'a">Murang'a</option>
+  <option value="Kiambu">Kiambu</option>
+  <option value="Turkana">Turkana</option>
+  <option value="West Pokot">West Pokot</option>
+  <option value="Samburu">Samburu</option>
+  <option value="Trans Nzoia">Trans Nzoia</option>
+  <option value="Uasin Gishu">Uasin Gishu</option>
+  <option value="Elgeyo Marakwet">Elgeyo Marakwet</option>
+  <option value="Nandi">Nandi</option>
+  <option value="Baringo">Baringo</option>
+  <option value="Laikipia">Laikipia</option>
+  <option value="Nakuru">Nakuru</option>
+  <option value="Narok">Narok</option>
+  <option value="Kajiado">Kajiado</option>
+  <option value="Kericho">Kericho</option>
+  <option value="Bomet">Bomet</option>
+  <option value="Kakamega">Kakamega</option>
+  <option value="Vihiga">Vihiga</option>
+  <option value="Bungoma">Bungoma</option>
+  <option value="Busia">Busia</option>
+  <option value="Siaya">Siaya</option>
+  <option value="Kisumu">Kisumu</option>
+  <option value="Homa Bay">Homa Bay</option>
+  <option value="Migori">Migori</option>
+  <option value="Kisii">Kisii</option>
+  <option value="Nyamira">Nyamira</option>
+  <option value="Nairobi">Nairobi</option>
+      </select>
+      <b>Mode of Travel: </b>
+      <select id="mode">
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Bicycling</option>
+        <option value="TRANSIT">Transit</option>
+      </select>
+      <label id="dptime" for="departure-time">Departure Time:</label>
+<input type="datetime-local" id="departure-time" />
+    </div>
+    <div id="map-container" style="flex: 1; position: relative; display: flex; justify-content: flex-end;">
+        <div id="map"></div>
+      </div>
+    <div id="directionsPanel"></div>
+    <div id="warnings-panel"></div>
+    <div id="info-container" style="padding: 10px; text-align: center;"></div>
+    <div id="total"></div>
+    <div id="results">
+        <p>Estimated Arrival Time: <span id="arrival-time">N/A</span></p>
+        <p>Estimated Travel Duration: <span id="travel-duration">N/A</span></p>
+      </div>
+    </div>
+
+    <!-- 
+      The `defer` attribute causes the script to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises. See
+      https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVQ11b4em7asW3XQIxPjOr0yZk3qZT7hg&callback=initMap&v=weekly&libraries=geometry"
+      defer
+    ></script>
+  </body>
+</html>
+</html>

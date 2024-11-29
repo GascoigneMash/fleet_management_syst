@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: rgba(31, 40, 51);
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 20px;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.navbar ul li {
+  margin-left: 50px;
+  display: block;
+}
+.navbar ul li a{
+  text-decoration: none;
+  color:rgba(197, 198, 199) ;
+  font-size: 20px;
+
+}
+.menu-icon {
+  display: flex; /* For mobile view */
+}
+
+/* Hero Section */
+.hero {
+  background-color: rgba(31, 40, 51);
+  text-align: left;
+  padding: 70px 0;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+.hero-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 100px;
+  
+}
+.hero-indicators span {
+  width: 10px;
+  height: 10px;
+  background-color: #555;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Section Styling */
+section {
+  padding: 30px 20px;
+  text-align: center;
+}
+.about-company, .how-we-work{
+  background-color: rgba(11, 12, 16);
+  margin-bottom: 20px;
+  width: 100%;
+  height: 500px;
+}
+.services{
+  background-color: rgba(31, 40, 51);
+  margin-bottom: 20px;
+  width: 100%;
+  height: 500px;
+}
+.sponsors{
+  background-color: rgba(31, 40, 51);
+  margin-bottom: 20px;
+  width: 100%;
+  height: 200px;
+}
+.about-company h2, .services h2, .how-we-work h2, .sponsors h2 {
+  margin-bottom: 20px;
+}
+.about-content, .services-content, .work-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.about-box, .service-box, .work-box {
+  width: 150px;
+  height: 150px;
+  background-color: #555;
+}
+.about-content .card {
+  width: 90px;
+  height: 90px;
+  background-color: #1e88e5;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.card p {
+font-size: 15px;
+}
+
+/* Sponsors Section */
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.sponsor-logos .logo {
+  width: 50px;
+  height: 50px;
+  background-color: #444;
+}
+
+/* Footer */
+footer {
+  background-color: #1b1b1b;
+  padding: 20px;
+  text-align: center;
+}
+footer a {
+  color: #1e88e5;
+  margin: 0 5px;
+}
+.container {
+  position: relative; /* Constrain the positioning of squares */
+  width: 300px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  margin: 0 auto; /* Center container within its parent */
+  margin-top: 100px; /* Adjust position relative to "About Company" */
+  margin-left: 20px;
+}
+
+/* Base styling for the squares */
+.square {
+  width: 200px; /* Adjust size as needed */
+  height: 200px;
+  background-color: #4a4a4a; /* Gray color */
+  position: absolute;
+}
+
+/* Position and style for the first square */
+.square1 {
+  top: 2px;
+  left: 100px;
+  border-radius: 15px 15px 15px 0px;
+}
+
+/* Position and style for the second square */
+.square2 {
+  top: 100px; /* Adjust vertical overlap */
+  left: 2px; /* Adjust horizontal overlap */
+  opacity: 0.8; /* Slight transparency for layering effect */
+  border-radius: 0px 15px 15px 15px
+}

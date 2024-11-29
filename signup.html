@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' https://fleet-management-system-7708f.firebaseapp.com;
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+    img-src 'self' data: https:;
+    font-src https://fonts.gstatic.com;
+    connect-src 'self' https://securetoken.googleapis.com https://fleet-management-system-7708f.firebaseio.com https://identitytoolkit.googleapis.com https://*.googleapis.com;
+    script-src 'self' https://*.firebaseio.com https://*.firebaseapp.com https://www.gstatic.com https://apis.google.com 'unsafe-eval';
+    frame-src https://accounts.google.com https://*.google.com https://fleet-management-system-7708f.firebaseapp.com; /* Updated */
+    frame-ancestors 'self';
+">
+    <meta http-equiv="Cross-Origin-Opener-Policy: same-origin-allow-popups">
+    <title>Document</title>
+     <link rel="stylesheet" href="./signup.css">
+     <script src="main.js" defer type="module"></script>
+</head>
+<body>
+     <header >
+        <nav>
+            <ul>
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="">Contact Us</a> </li>
+                 <li><a href="signup.html">Sign Up</a></li>
+                 <li><a href="loginpg.html">Login</a></li>
+        </ul>
+        </nav>
+    <div id="menuicon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" style="fill: rgba(102, 252, 241);transform: rotate(180deg);msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);"><path d="M4 11h12v2H4zm0-5h16v2H4zm0 12h7.235v-2H4z"></path></svg>
+      </div>
+   </header>
+   <br>
+   <div id="signup">
+     <h1 >Create a new account </h1>
+        <br>
+    <p >Already have an account? <a href="loginpg.html"style=" color: C5C6C7;">login</a></p> 
+    <br>
+    <form>
+        <div class="inputbox"  >
+            <input class="names" type="text" id="Fname" name="firstname" placeholder="First Name" autocomplete="given-name">
+            <br>
+            <input class="names" type="text" id="Lname" name="lastname" placeholder="Last Name" autocomplete="family-name">
+           <br> 
+        </div>
+        <div class="inputbox"  >
+            <input class="tname" type="text" id="username" name="username" placeholder="Username" autocomplete="username">
+            <br>
+            <input class="tname" type="text" id="title" name="title" placeholder="Title" autocomplete="off">
+            <br>
+        </div>
+        <div class="inputbox">
+            <input class="rest" type="email" id="email" name="email" placeholder="Email" autocomplete="email">
+            <br>
+        </div>
+        <div class="inputbox">
+            <input class="rest" type="password" id="password" name="password" placeholder="Password" autocomplete="new-password">
+            <br>
+        </div>
+        <div class="inputbox">
+            <input class="rest" type="password" id="Cpassword" name="new-password" placeholder="Confirm Password" autocomplete="new-password">
+            <br>
+        </div>
+        <button type="button" class="btn" id="sign-up-btn" >Submit</button><br>
+    </form>
+   </div>
+</div>
+</body>
+</html>
